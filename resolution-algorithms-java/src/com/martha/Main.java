@@ -1,8 +1,12 @@
-package com.martha.finaldiciembre;
+package com.martha;
+
+import com.martha.ejercicios.Account;
+import com.martha.finaldiciembre.Position;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Scanner;
 
 /*
 falta corregir
@@ -11,6 +15,69 @@ falta corregir
 public class Main {
     public static void main(String[] args) {
 
+        String option;
+        Scanner input = new Scanner(System.in); //supuestaemnte se puede cerrar el scanner scanner.close();
+
+        do {
+            showMenu();
+            option = input.next();
+
+            switch (option)
+            {
+                case "one":
+                    exerciseOne();
+                    break;
+
+
+                case "two":
+                    endDecember();
+                    break;
+/*
+                case "three":
+                    exerciseThree();
+*/
+                case "three":
+                    System.out.println("Exiting the program.");
+                    break;
+
+                default:
+                    if (!option.equals("three"))
+                        System.out.println("Invalid option. Please try again.");
+            }
+        }while(!option.equals("three"));
+
+
+    }
+
+    public static void showMenu()
+    {
+        System.out.println("Menu:");
+        System.out.println("Exercise one:");
+        System.out.println("Exercise two(endDecember):");
+        System.out.println("Exercise three:");
+        System.out.println("Exit:");
+        System.out.print("Select an option: ");
+    }
+
+    public static void exerciseOne()
+    {
+        Account accountOne = new Account("Martha Barra");
+        Account accountTwo = new Account("Gustavo Claros",1000);
+
+        accountOne.deposit(1000);
+        accountTwo.deposit(1000);
+
+        accountOne.withdraw (500);
+        accountTwo.withdraw (500);
+
+        System.out.println(accountOne); // con el tostring me permite mostral asi
+        System.out.println(accountTwo);
+
+
+    }
+
+    public static void endDecember()
+    {
         ///position A
         Position posA1 = new Position(1683298800, "REY20927", -34.393448F, -58.522747F);
         Position posA2 = new Position(1683298818, "REY20927", -34.393475F, -58.522743F);
@@ -27,7 +94,7 @@ public class Main {
 
 
         //CARGAMOS LAS POSICIONES
-        List<Position> listA = new ArrayList();
+        List<Position> listA = new ArrayList<>();
         listA.add(posA1);
         listA.add(posA2);
         listA.add(posA3);
@@ -39,7 +106,7 @@ public class Main {
             System.out.println(currentPosition);
         }
 
-        List<Position> listB = new ArrayList();
+        List<Position> listB = new ArrayList<>();
         listB.add(posB1);
         listB.add(posB2);
         listB.add(posB3);
@@ -53,19 +120,19 @@ public class Main {
         }
 
         /////////////////////////////
-        //ejercicio 1
+        //one
         //merge
         int quantityVessels = 0;
-        // Iteradores para listaA y listaB
+        // Iterators : listA y listB
         Iterator<Position> iteratorA = listA.iterator();
         Iterator<Position> iteratorB = listB.iterator();
 
         Position positionA = iteratorA.hasNext() ? iteratorA.next() : null;
         Position positionB = iteratorB.hasNext() ? iteratorB.next() : null;
 
-        List<Position> unifiedList = new ArrayList();
+        List<Position> unifiedList = new ArrayList<>();
 
-        while (iteratorA.hasNext() && iteratorB.hasNext() && quantityVessels < 10) {
+        while (iteratorA.hasNext() && iteratorB.hasNext() ) {
             int dateAndTimeA = positionA.getDateAndTime();
             int dateAndTimeB = positionB.getDateAndTime();
 
@@ -77,27 +144,47 @@ public class Main {
                 unifiedList.add(positionB);
                 positionB = iteratorB.hasNext() ? iteratorB.next() : null;
             }
-            if(dateAndTimeA == dateAndTimeB) { //cualquiera es los mismo si a o b
+            if(dateAndTimeA == dateAndTimeB) {
                 unifiedList.add(positionA);
                 positionA = iteratorA.hasNext() ? iteratorA.next() : null;
                 positionB = iteratorB.hasNext() ? iteratorB.next() : null;
 
             }
 
-            quantityVessels++;
         }
 
-        while (iteratorA.hasNext() && quantityVessels < 10) {
+        if(positionA.getDateAndTime() < positionB.getDateAndTime())
+        {
+            //se come el ultimo elemento el iterator, por ello hago esto, pero me trae dudas
+            if (positionA != null) {
+                unifiedList.add(positionA);
+            }
+
+            if (positionB != null) {
+                unifiedList.add(positionB);
+            }
+        }else{
+            if (positionB != null) {
+                unifiedList.add(positionB);
+            }
+
+            if (positionA != null) {
+                unifiedList.add(positionA);
+            }
+        }
+
+        while (iteratorA.hasNext() ) {
             unifiedList.add(positionA);
             positionA = iteratorA.hasNext() ? iteratorA.next() : null;
-            quantityVessels++;
+
         }
 
-        while (iteratorB.hasNext() && quantityVessels < 10) {
+        while (iteratorB.hasNext() ) {
             unifiedList.add(positionB);
             positionB = iteratorB.hasNext() ? iteratorB.next() : null;
-            quantityVessels++;
+
         }
+
 
         System.out.println("--------------------Unified Positions--------------------");
         System.out.println("Date and Time|Registration|Latitude|Longitude");
@@ -105,4 +192,9 @@ public class Main {
             System.out.println(currentPosition);
         }
     }
+
+
+
+
+
 }

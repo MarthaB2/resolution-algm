@@ -52,7 +52,7 @@ public class Position {
     }
 
     //to string
-///todo se hereda de object, es el padre de tods objetos
+///everything is inherited from object, he is the father of all objects
     @Override
     public String toString() {
         return this.dateAndTime + "," + this.registration + "," + this.latitude + "," + this.longitude;
