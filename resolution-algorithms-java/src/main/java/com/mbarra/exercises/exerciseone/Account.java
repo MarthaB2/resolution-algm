@@ -1,12 +1,12 @@
-package com.martha.ejercicios;
+package com.mbarra.exercises.exerciseone;
 
 public class Account {
 
-    //Atributos
-    private String headline ; //titular
-    private double amount; //cantidad
+    //Attributes
+    private String headline ;
+    private double amount;
 
-    //Constructores
+    //Constructors
 
     /*
     When a parameter is said to be "optional" in the context of constructors, it means that it
@@ -61,7 +61,7 @@ public class Account {
             this.amount += amount;
     }
 
-    public void withdraw(double amount) //retirar
+    public void withdraw(double amount)
     {
         if(this.amount-amount<0)
             this.amount = 0;
