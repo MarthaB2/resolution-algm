@@ -1,23 +1,23 @@
 package com.mbarra.exercises.exerciseone;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class AccountTest {
+class AccountTest {
 
     @Test
-    public void getHeadline() {
+    void getHeadline() {
         Account a1 =  new Account("martha barra",1000);
 
-        Assert.assertEquals("martha barra",a1.getHeadline());
+        Assertions.assertEquals("martha barra",a1.getHeadline());
     }
 
     @Test
-    public void getAmount() {
+    void getAmount() {
         Account a2 =  new Account("inocencia quelca",2000);
         a2.withdraw(500);
-        Assert.assertEquals(1500,a2.getAmount(),0.0001);
+        Assertions.assertEquals(1500,a2.getAmount(),0.0001);
     }
 }
