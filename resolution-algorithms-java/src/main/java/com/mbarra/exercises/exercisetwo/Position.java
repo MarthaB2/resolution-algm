@@ -1,4 +1,4 @@
-package com.martha.finaldiciembre;
+package com.mbarra.exercises.exercisetwo;
 
 public class Position {
     private int  dateAndTime;
@@ -41,7 +41,7 @@ public class Position {
     }
 
     /////
-    //constructor
+    //constructors
 
 
     public Position(int dateAndTime, String registration, float latitude, float longitude) {
