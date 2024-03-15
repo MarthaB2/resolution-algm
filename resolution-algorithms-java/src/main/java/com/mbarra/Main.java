@@ -23,7 +23,6 @@ public class Main {
                     AccountLogic.exerciseOne();
                     break;
 
-
                 case "two":
                     PositionLogic.exerciseTwo();
                     break;
