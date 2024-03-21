@@ -3,7 +3,7 @@ package com.mbarra.exercises.exerciseone;
 public class Account {
 
     //Attributes
-    private String headline ;
+    private String headline;
     private double amount;
 
     //Constructors
@@ -16,18 +16,17 @@ public class Account {
 
     public Account(String headline) {
         this.headline = headline;
-        this.amount= 0;
+        this.amount = 0;
     }
 
-    public Account(String headline , double amount) {
-        this.headline  = headline ;
+    public Account(String headline, double amount) {
+        this.headline = headline;
         if (amount < 0) {
             this.amount = 0;
         } else {
             this.amount = amount;
         }
     }
-
 
 
     public String getHeadline() {
@@ -55,15 +54,13 @@ public class Account {
     }
 
 
-    public void deposit(double amount)
-    {
-        if(amount>0)
+    public void deposit(double amount) {
+        if (amount > 0)
             this.amount += amount;
     }
 
-    public void withdraw(double amount)
-    {
-        if(this.amount-amount<0)
+    public void withdraw(double amount) {
+        if (this.amount - amount < 0)
             this.amount = 0;
         else
             this.amount -= amount;

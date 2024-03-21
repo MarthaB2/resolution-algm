@@ -9,15 +9,15 @@ class AccountTest {
 
     @Test
     void getHeadline() {
-        Account a1 =  new Account("martha barra",1000);
+        Account a1 = new Account("martha barra", 1000);
 
-        Assertions.assertEquals("martha barra",a1.getHeadline());
+        Assertions.assertEquals("martha barra", a1.getHeadline());
     }
 
     @Test
     void getAmount() {
-        Account a2 =  new Account("inocencia quelca",2000);
+        Account a2 = new Account("inocencia quelca", 2000);
         a2.withdraw(500);
-        Assertions.assertEquals(1500,a2.getAmount(),0.0001);
+        Assertions.assertEquals(1500, a2.getAmount(), 0.0001);
     }
 }

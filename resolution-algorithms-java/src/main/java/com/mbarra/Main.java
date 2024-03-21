@@ -17,8 +17,7 @@ public class Main {
             showMenu();
             option = input.next();
 
-            switch (option)
-            {
+            switch (option) {
                 case "one":
                     AccountLogic.exerciseOne();
                     break;
@@ -37,13 +36,12 @@ public class Main {
                 default:
                     System.out.println("Invalid option. Please try again.");
             }
-        }while(!option.equals("four"));
+        } while (!option.equals("four"));
 
 
     }
 
-    public static void showMenu()
-    {
+    public static void showMenu() {
         System.out.println("Menu:");
         System.out.println("Exercise one:");
         System.out.println("Exercise two(endDecember):");
@@ -51,7 +49,6 @@ public class Main {
         System.out.println("Exit:");
         System.out.print("Select an option: ");
     }
-
 
 
 }

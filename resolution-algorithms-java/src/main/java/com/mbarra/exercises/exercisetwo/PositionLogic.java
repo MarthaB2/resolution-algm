@@ -5,8 +5,7 @@ import java.util.List;
 
 public class PositionLogic {
 
-    public static void exerciseTwo()
-    {
+    public static void exerciseTwo() {
         ///position A
         List<Position> listA = new ArrayList<>();
 
@@ -46,26 +45,25 @@ public class PositionLogic {
         Position posiB;
 
         List<Position> unifiedList = new ArrayList<>();
-        int i=0,j=0;
+        int i = 0, j = 0;
 
 
-
-        while (i<listA.size() && j<listB.size()) {
-            posiA=listA.get(i);
-            posiB=listB.get(j);
+        while (i < listA.size() && j < listB.size()) {
+            posiA = listA.get(i);
+            posiB = listB.get(j);
 
             if (posiA.getDateAndTime() < posiB.getDateAndTime()) {
 
                 unifiedList.add(posiA);
                 i++;
             }
-            if(posiA.getDateAndTime() > posiB.getDateAndTime()) {
+            if (posiA.getDateAndTime() > posiB.getDateAndTime()) {
 
 
                 unifiedList.add(posiB);
                 j++;
             }
-            if(posiA.getDateAndTime() == posiB.getDateAndTime()) {
+            if (posiA.getDateAndTime() == posiB.getDateAndTime()) {
 
                 unifiedList.add(posiA);
                 i++;
@@ -75,14 +73,14 @@ public class PositionLogic {
         }
 
 
-        while (i<listA.size() ) {
-            posiA=listA.get(i);
+        while (i < listA.size()) {
+            posiA = listA.get(i);
             unifiedList.add(posiA);
             i++;
         }
 
-        while (i<listB.size() ) {
-            posiB=listB.get(i);
+        while (i < listB.size()) {
+            posiB = listB.get(i);
             unifiedList.add(posiB);
             j++;
         }
@@ -95,10 +93,6 @@ public class PositionLogic {
         }
 
     }
-
-
-
-
 
 
 }

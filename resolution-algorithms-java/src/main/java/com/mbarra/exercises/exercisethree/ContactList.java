@@ -44,7 +44,7 @@ public class ContactList {
 
         for (int i = 0; i < contacts.length; i++) {
 
-            if (contacts[i] != null && c.equals(contacts[i])!=0) {
+            if (contacts[i] != null && c.equals(contacts[i]) != 0) {
                 return 1;
             }
         }
@@ -65,9 +65,9 @@ public class ContactList {
     }
 
     public void listContacts() {
-        int i,amount;
-        amount=hollowFree();
-        if ( amount == contacts.length) {
+        int i, amount;
+        amount = hollowFree();
+        if (amount == contacts.length) {
             System.out.println("No contacts");
         } else {
             for (i = 0; i < contacts.length; i++) {
@@ -78,40 +78,34 @@ public class ContactList {
         }
     }
 
-    public int hollowFree()
-    {
-        int i,amount=0;
+    public int hollowFree() {
+        int i, amount = 0;
 
-        for(i=0; i<contacts.length;i++)
-        {
-            if(contacts[i] == null)
+        for (i = 0; i < contacts.length; i++) {
+            if (contacts[i] == null)
                 amount++;
         }
         return amount;
     }
 
-    public void searchContact(String nombre)
-    {
-        int i,found=0;
-        for(i=0;i<contacts.length && found==0;i++)
-        {
-            if(contacts[i]!=null && contacts[i].getName().trim().equalsIgnoreCase(nombre.trim()))
-            {
-                System.out.println("Phone: "+ contacts[i].getPhone());
-                found=1;
+    public void searchContact(String nombre) {
+        int i, found = 0;
+        for (i = 0; i < contacts.length && found == 0; i++) {
+            if (contacts[i] != null && contacts[i].getName().trim().equalsIgnoreCase(nombre.trim())) {
+                System.out.println("Phone: " + contacts[i].getPhone());
+                found = 1;
             }
         }
 
-        if(found==0)
-        {
+        if (found == 0) {
             System.out.println("Contact not found");
         }
     }
 
     public void deleteContact(Contact c) {
-        int found = 0,i;
+        int found = 0, i;
 
-        for (i = 0; i < contacts.length && found==0; i++) {
+        for (i = 0; i < contacts.length && found == 0; i++) {
             if (contacts[i] != null && contacts[i].equals(c) == 1) {
                 //deleteContactInPosition(i);
                 contacts[i] = null;
@@ -119,7 +113,7 @@ public class ContactList {
             }
         }
 
-        if (found !=0) {
+        if (found != 0) {
             System.out.println("The contact has been removed.");
         } else {
             System.out.println("The contact has not been deleted because it does not exist in the list.");
