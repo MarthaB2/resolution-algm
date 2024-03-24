@@ -3,8 +3,7 @@ package com.mbarra.exercises.exercisethree;
 import java.util.Scanner;
 
 public class ContactListLogic {
-    public static void exerciseThree()
-    {
+    public static void exerciseThree() {
         Scanner sc = new Scanner(System.in);
         sc.useDelimiter("\n");
         ContactList cl = new ContactList(3);
@@ -19,8 +18,7 @@ public class ContactListLogic {
             showMenuC();
             option = sc.nextInt();
 
-            switch (option)
-            {
+            switch (option) {
                 case 1:
                     System.out.print("Enter name: ");
                     name = sc.next();
@@ -28,7 +26,7 @@ public class ContactListLogic {
                     System.out.print("Enter phone: ");
                     phone = sc.nextInt();
 
-                    c = new Contact(name,phone);
+                    c = new Contact(name, phone);
 
                     cl.addContact(c);
                     break;
@@ -38,7 +36,7 @@ public class ContactListLogic {
                     System.out.print("Enter name: ");
                     name = sc.next();
                     c = new Contact(name);
-                    if(cl.contactExists(c) != 0)
+                    if (cl.contactExists(c) != 0)
                         System.out.println("Contact exists");
                     else
                         System.out.println("No contact exists");
@@ -66,7 +64,7 @@ public class ContactListLogic {
                     break;
 
                 case 6:
-                    if(cl.fullList()!=0)
+                    if (cl.fullList() != 0)
                         System.out.println("The list is full");
                     else
                         System.out.println("The list is not full");
@@ -84,12 +82,11 @@ public class ContactListLogic {
                 default:
                     System.out.println("Invalid option. Please try again.");
             }
-        }while(option != 8);
+        } while (option != 8);
 
     }
 
-    public static void showMenuC()
-    {
+    public static void showMenuC() {
         System.out.println("--------------------Exercise three--------------------");
         System.out.println("1. Add contact");
         System.out.println("2. Contact exists");

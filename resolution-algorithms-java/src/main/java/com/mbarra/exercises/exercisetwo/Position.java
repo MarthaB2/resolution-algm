@@ -1,7 +1,7 @@
 package com.mbarra.exercises.exercisetwo;
 
 public class Position {
-    private int  dateAndTime;
+    private int dateAndTime;
     private String registration;
     private float latitude;
     private float longitude;

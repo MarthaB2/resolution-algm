@@ -39,9 +39,9 @@ public class Contact {
                 '}';
     }
 
-    public int equals(Contact c){
+    public int equals(Contact c) {
 
-        if(this.name.trim().equalsIgnoreCase(c.getName().trim())){
+        if (this.name.trim().equalsIgnoreCase(c.getName().trim())) {
             return 1;
         }
 

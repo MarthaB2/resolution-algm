@@ -14,6 +14,5 @@ public class AccountLogic {
 
         System.out.println(accountOne);
         System.out.println(accountTwo);
-
     }
 }
